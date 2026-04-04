@@ -37,7 +37,7 @@ body {
   justify-content: space-between;
   align-items: center;
   height: calc(100vh / 10);
-  /* box-shadow: 0px 0px 15px 5px var(--second-color); */ /* add js  */
+  /* box-shadow: 0px 0px 15px 5px var(--second-color); */ /* add js ok  */
   width: 100%;
   position: fixed;
   z-index: 99999;

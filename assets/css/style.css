@@ -1,9 +1,24 @@
-@import url("https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Alyamama:wght@300..900&family=Rakkas&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #053147;
+  --second-color: #e5c88e;
+  --hover-primary: rgb(15, 85, 200);
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+  transition: all 0.5s;
+}
+
+a:hover {
+  color: var(--second-color);
 }
 
 html {
@@ -11,6 +26,48 @@ html {
 }
 
 body {
-  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-family: "Rakkas", sans-serif;
   font-weight: 500;
+}
+
+/* =========== Header =========== */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: calc(100vh / 10);
+  box-shadow: 0px 0px 10px 0px black;
+  width: 100%;
+  position: fixed;
+}
+
+.header .logo {
+  display: flex;
+  align-items: center;
+  width: 20%;
+  text-align: center;
+}
+
+.header .logo .logo-img {
+  width: 150px;
+}
+
+.header .logo .name-logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.header .nav {
+  width: 60%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+
+.book {
+  background-color: var(--primary-color);
+  height: 100%;
+  width: 100%;
 }

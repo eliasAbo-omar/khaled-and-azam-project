@@ -2,6 +2,14 @@
   "name": "khaledandazam",
   "version": "1.0.0",
   "description": "",
+  "homepage": "https://github.com/eliasAbo-omar/khaled-and-azam-project#readme",
+  "bugs": {
+    "url": "https://github.com/eliasAbo-omar/khaled-and-azam-project/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eliasAbo-omar/khaled-and-azam-project.git"
+  },
   "license": "ISC",
   "author": "",
   "type": "commonjs",

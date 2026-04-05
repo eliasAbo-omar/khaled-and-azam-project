@@ -15,6 +15,26 @@ a {
   color: var(--primary-color);
   transition: all 0.5s;
   font-size: 20px;
+  position: relative;
+}
+
+a::before {
+  content: "";
+  width: 0%;
+  height: 3px;
+  background-color: var(--primary-color);
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  transition: all 0.9s;
+}
+
+a:hover::before {
+  width: 80%;
+}
+
+a.active:hover::before {
+  width: 0;
 }
 
 a:hover {
@@ -35,7 +55,13 @@ body {
 }
 
 .active {
+  font-weight: bold;
   color: var(--second-color);
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.shadow {
+  box-shadow: 0px 0px 15px 5px var(--second-color) !important;
 }
 
 /* =========== Header =========== */
@@ -44,7 +70,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: calc(100vh / 10);
+  height: 80px;
   /* box-shadow: 0px 0px 15px 5px var(--second-color); */ /* add js ok  */
   width: 100%;
   position: fixed;
@@ -81,7 +107,7 @@ body {
 
 .home {
   background-color: var(--primary-color);
-  height: 100vh;
+  padding: 0 0 80px;
   width: 100%;
   color: var(--primary-color);
 }

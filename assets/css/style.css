@@ -123,9 +123,10 @@ body {
 .home .scene .book {
   position: relative;
   margin: 0 auto;
-  width: 500px;
-  height: 600px;
+  width: 300px;
+  height: 400px;
   cursor: pointer;
+  transform: translateX(300px);
 }
 
 .home .scene .book .cover {
@@ -137,6 +138,7 @@ body {
   transform-style: preserve-3d;
   position: absolute;
   z-index: 1;
+  transition: all 1.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .z {
@@ -150,19 +152,19 @@ body {
   translate: -50% -50%;
   opacity: 1;
   font-size: 42px;
-  transition: all 0.5s;
   z-index: 2;
+  transition: all 1.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .home .scene .book .img {
   opacity: 0;
-  width: 500px;
+  width: 300px;
   position: absolute;
   z-index: 4;
-  transition: all 0.5s ease-in-out;
   top: 100%;
   left: 50%;
   transform: translate(-50%, 0);
+  transition: all 1.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .home .scene .book .page {
@@ -174,45 +176,45 @@ body {
   top: 0;
   left: 0;
   z-index: 0;
-  transition: all 0.5s ease-in-out;
+  transition: all 1.5s cubic-bezier(0.4, 0, 0.2, 1);
   padding: 20px;
   box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.home .scene .book:hover .text {
+.home .scene .book.open .text {
   opacity: 0;
 }
 
-.home .scene .book:hover .flip-right {
-  transform: rotateY(-180deg) translateX(-250px);
+.home .scene .book.open .flip-right {
+  transform: rotateY(-180deg) translateX(-140px);
 }
 
-.home .scene .book:hover .flip-left {
-  transform: rotateY(180deg) translateX(250px);
+.home .scene .book.open .flip-left {
+  transform: rotateY(180deg) translateX(140px);
 }
 
-.home .scene .book:hover .page-right {
-  transform: rotateY(170deg) translateX(240px);
+.home .scene .book.open .page-right {
+  transform: rotateY(170deg) translateX(130px);
   z-index: 3;
 }
 
-.home .scene .book:hover .page-left {
-  transform: rotateY(-170deg) translateX(-240px);
+.home .scene .book.open .page-left {
+  transform: rotateY(-170deg) translateX(-130px);
   z-index: 3;
 }
-.home .scene .book:hover .page-right-1 {
-  transform: rotateY(160deg) translateX(230px);
-  z-index: 3;
-}
-
-.home .scene .book:hover .page-left-1 {
-  transform: rotateY(-160deg) translateX(-230px);
+.home .scene .book.open .page-right-1 {
+  transform: rotateY(160deg) translateX(120px);
   z-index: 3;
 }
 
-.home .scene .book:hover .img {
+.home .scene .book.open .page-left-1 {
+  transform: rotateY(-160deg) translateX(-120px);
+  z-index: 3;
+}
+
+.home .scene .book.open .img {
   opacity: 1;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  top: 45%;
+  transform: translate(-38%, -50%);
   z-index: 5;
 }

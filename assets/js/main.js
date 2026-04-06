@@ -22,3 +22,13 @@ window.addEventListener("scroll", () => {
     header.classList.remove("shadow");
   }
 });
+
+// =========== Book Open ===========
+
+window.addEventListener("load", () => {
+  const book = document.querySelector(".book");
+
+  setTimeout(() => {
+    book.classList.add("open");
+  }, 500);
+});

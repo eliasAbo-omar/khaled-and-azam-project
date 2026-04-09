@@ -299,10 +299,6 @@ body {
   cursor: pointer;
 }
 
-.month-star .first {
-  /* transform: scale(1.1); */
-}
-
 .month-star .box .number-card {
   font-size: 22px;
   font-weight: bold;

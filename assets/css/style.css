@@ -10,14 +10,16 @@
   --second-color: #e5c88e;
   --shadow-main: 0px 0px 15px 2px grey;
   --shadow-card: 0px 0px 5px 1px #1122116e inset;
+  --white-color: white;
+  --shadow-test: 0px 0px 15px 5px var(--second-color);
 }
 
 .color-1 {
-  color: var(--primary-color);
+  color: var(--primary-color) !important;
 }
 
 .color-2 {
-  color: var(--second-color);
+  color: var(--second-color) !important;
 }
 
 a {
@@ -63,7 +65,7 @@ body {
 }
 
 .padding {
-  padding: 80px 0;
+  padding: 100px 0;
 }
 
 .active {
@@ -74,6 +76,10 @@ body {
 
 .shadow {
   box-shadow: 0px 0px 15px 5px var(--second-color) !important;
+}
+
+.background {
+  background-color: var(--primary-color);
 }
 
 /* =========== Header =========== */
@@ -118,7 +124,6 @@ body {
 /* =========== Home =========== */
 
 .home {
-  background-color: var(--primary-color);
   padding: 0 0 80px;
   width: 100%;
   color: var(--primary-color);
@@ -244,6 +249,10 @@ body {
   color: var(--second-color);
 }
 
+.about .text h1 {
+  font-weight: bold;
+}
+
 .about .text .prag {
   font-size: 20px;
   text-align: center;
@@ -252,7 +261,7 @@ body {
 
 /* =========== advice =========== */
 
-.advice {
+.advice-1 {
   position: relative;
   width: 600px;
   display: flex;
@@ -290,12 +299,12 @@ body {
   border: 4px solid rgb(83, 83, 83);
   border-radius: 10px;
   box-shadow: var(--shadow-main);
-  background-image: url(../image/background.png);
+  background-image: url(../image/old\ page.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   transition: all 0.5s;
-  margin: 0 5px;
+  margin: 0 10px;
   /* cursor: pointer; */
 }
 
@@ -306,6 +315,7 @@ body {
 .month-star .box .number-card {
   font-size: 22px;
   font-weight: bold;
+  color: var(--white-color);
 }
 
 .month-star .box .logo .month-img {
@@ -324,4 +334,107 @@ body {
   border-bottom: 3px solid var(--primary-color);
   border-radius: 10px;
   box-shadow: var(--shadow-card);
+  color: var(--white-color);
+}
+
+/* =========== advice =========== */
+
+.advice-2 {
+  position: relative;
+  width: 600px;
+  display: flex;
+  margin: 0px auto;
+  height: 100px;
+  background: #fff;
+  border-radius: 20px;
+  top: 49px;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+  box-shadow: var(--shadow-main);
+  font-size: 24px;
+  transition: all 0.5s;
+}
+
+/* =========== reader week =========== */
+
+.text-head {
+  display: flex;
+  align-items: center;
+}
+
+.text-head .head-read {
+  margin: 0 auto;
+  padding: 10px;
+  color: var(--second-color);
+  font-weight: bold;
+}
+
+.container .week-box {
+  margin-top: 60px;
+}
+
+.container .week-box .box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+  border: 4px solid rgb(83, 83, 83);
+  border-radius: 10px;
+  box-shadow: var(--shadow-test);
+  background-image: url(../image/old\ page.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: all 0.5s;
+  margin: 0 10px;
+}
+
+.container .week-box .box .number-card {
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--white-color);
+}
+
+.container .week-box .box .logo .week-img {
+  width: 120px;
+  margin-bottom: 10px;
+}
+
+.container .week-box .box .name,
+.container .week-box .box .book-name,
+.container .week-box .box .number-page {
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  border-bottom: 3px solid var(--primary-color);
+  border-radius: 10px;
+  box-shadow: var(--shadow-card);
+  color: var(--white-color);
+}
+
+.container .week-box .box.first {
+  transform: scale(1.1);
+}
+
+/* =========== advice =========== */
+
+.advice-3 {
+  position: relative;
+  width: 600px;
+  display: flex;
+  margin: 0px auto;
+  height: 100px;
+  background: #fff;
+  border-radius: 20px;
+  top: -52px;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+  box-shadow: var(--shadow-main);
+  font-size: 24px;
+  transition: all 0.5s;
 }

@@ -294,9 +294,13 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  /* background-color: var(--second-color); */
   transition: all 0.5s;
-  cursor: pointer;
+  margin: 0 5px;
+  /* cursor: pointer; */
+}
+
+.month-star .box.first {
+  transform: scale(1.1);
 }
 
 .month-star .box .number-card {
@@ -320,8 +324,4 @@ body {
   border-bottom: 3px solid var(--primary-color);
   border-radius: 10px;
   box-shadow: var(--shadow-card);
-}
-
-.month-star .box:hover {
-  transform: scale(1.1);
 }

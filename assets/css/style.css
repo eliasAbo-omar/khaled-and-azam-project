@@ -183,7 +183,7 @@ body {
 
 .home .scene .book .img {
   opacity: 0;
-  width: 300px;
+  width: 200px;
   position: absolute;
   z-index: 4;
   top: 100%;

@@ -3,13 +3,15 @@ import { initializeApp } from "firebase/app";
 import { getDatabase } from "firebase/database";
 
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
-  databaseURL: import.meta.env.VITE_FIREBASE_DATABASE_URL,
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
-  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
-  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  apiKey: "AIzaSyB5uAMh4lplTs35V-Y5eJt6NmCRULksRKc",
+  authDomain: "my-reader-b0542.firebaseapp.com",
+  databaseURL:
+    "https://my-reader-b0542-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "my-reader-b0542",
+  storageBucket: "my-reader-b0542.firebasestorage.app",
+  messagingSenderId: "4814921617",
+  appId: "1:4814921617:web:c78fe99f45e0700fdd8430",
+  measurementId: "G-QRXHPZYTNF",
 };
 
 // Initialize Firebase

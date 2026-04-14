@@ -34,7 +34,7 @@
         <li><a href="#نجوم-الشهر">نجوم الشهر</a></li>
         <li><a href="#زحف-القراء">زحف القراء</a></li>
         <li><a href="#إقتباسات">إقتباسات</a></li>
-        <li><a href="#إضافة المقرر اليومي">إضافة المقرر اليومي</a></li>
+        <li><a href="#إضافة-المقرر-اليومي">إضافة المقرر اليومي</a></li>
       </ul>
     </header>
     <!-- =========== Book Section =========== -->
@@ -82,65 +82,7 @@
       </div>
       <div class="container">
         <div class="month-box">
-          <div class="row">
-            <div class="col-md-4">
-              <div class="box">
-                <div class="number-card">المركز الثاني</div>
-                <div class="logo">
-                  <img
-                    src="assets/image/logo.png"
-                    class="month-img"
-                    alt="logo"
-                  />
-                </div>
-                <div class="name">
-                  <span class="month-name">إلياس</span>
-                </div>
-                <div class="book-name">
-                  <span class="month-book">قرآن</span>
-                </div>
-                <div class="number-page">300</div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="box first">
-                <div class="number-card">المركز الأول</div>
-                <div class="logo">
-                  <img
-                    src="assets/image/logo.png"
-                    class="month-img"
-                    alt="logo"
-                  />
-                </div>
-                <div class="name">
-                  <span class="month-name">عزام</span>
-                </div>
-                <div class="book-name">
-                  <span class="month-book">قرآن</span>
-                </div>
-                <div class="number-page">400</div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="box">
-                <div class="number-card">المركز الثالث</div>
-                <div class="logo">
-                  <img
-                    src="assets/image/logo.png"
-                    class="month-img"
-                    alt="logo"
-                  />
-                </div>
-                <div class="name">
-                  <span class="month-name">خالد</span>
-                </div>
-                <div class="book-name">
-                  <span class="month-book">قرآن</span>
-                </div>
-                <div class="number-page">100</div>
-              </div>
-            </div>
-          </div>
+          <div class="row" id="container-month"></div>
         </div>
       </div>
     </section>
@@ -187,66 +129,8 @@
         <h1 class="head-read color-1">قارئ الأسبوع</h1>
       </div>
       <div class="container">
-        <div class="week-box">
-          <div class="row">
-            <div class="col-md-4">
-              <div class="box">
-                <div class="number-card">المركز الثاني</div>
-                <div class="logo">
-                  <img
-                    src="assets/image/logo.png"
-                    class="week-img"
-                    alt="logo"
-                  />
-                </div>
-                <div class="name">
-                  <span class="month-name">إلياس</span>
-                </div>
-                <div class="book-name">
-                  <span class="month-book">قرآن</span>
-                </div>
-                <div class="number-page">300</div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="box first">
-                <div class="number-card">المركز الأول</div>
-                <div class="logo">
-                  <img
-                    src="assets/image/logo.png"
-                    class="week-img"
-                    alt="logo"
-                  />
-                </div>
-                <div class="name">
-                  <span class="month-name">عزام</span>
-                </div>
-                <div class="book-name">
-                  <span class="month-book">قرآن</span>
-                </div>
-                <div class="number-page">400</div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="box">
-                <div class="number-card">المركز الثالث</div>
-                <div class="logo">
-                  <img
-                    src="assets/image/logo.png"
-                    class="week-img"
-                    alt="logo"
-                  />
-                </div>
-                <div class="name">
-                  <span class="month-name">خالد</span>
-                </div>
-                <div class="book-name">
-                  <span class="month-book">قرآن</span>
-                </div>
-                <div class="number-page">100</div>
-              </div>
-            </div>
-          </div>
+        <div class="month-star">
+          <div class="row" id="container-week"></div>
         </div>
       </div>
     </section>
@@ -261,9 +145,66 @@
       <div class="text-head">
         <h1 class="head-read color-2">زحف القراء</h1>
       </div>
+      <div class="container"></div>
+    </section>
+    <!-- =========== advice =========== -->
+    <section class="advice">
+      <div class="adv-text">
+        <p class="mb-0 color-1">إستمر، فالإستمرارية تصنع الفارق.</p>
+      </div>
+    </section>
+    <!-- =========== comments =========== -->
+    <section class="comments padding" id="إقتباسات">
+      <div class="text-head">
+        <h1 class="head-read color-1">إقتباسات</h1>
+      </div>
+    </section>
+    <!-- =========== advice =========== -->
+    <section class="advice">
+      <div class="adv-text">
+        <p class="mb-0 color-1">إبدأ بخطوة صغيرة، إستمر لتصل بعيداً.</p>
+      </div>
+    </section>
+    <!-- =========== inputs =========== -->
+    <section class="inputs padding background" id="إضافة-المقرر-اليومي">
+      <div class="text-head">
+        <h1 class="head-read color-2">إضافة المقرر اليومي</h1>
+      </div>
+      <div class="container">
+        <div class="box-input">
+          <input
+            type="text"
+            placeholder="أكتب إسمك هنا"
+            id="userName"
+            required
+          />
+          <input
+            type="text"
+            placeholder="أكتب كتابك هنا"
+            id="userBook"
+            required
+          />
+          <input
+            type="text"
+            placeholder="أكتب عدد صفحات قرأتك هنا"
+            id="userPages"
+            required
+          />
+        </div>
+        <button type="button" onclick="addNewReader()" class="send">
+          إرسل
+        </button>
+      </div>
     </section>
     <!-- =========== BootStrap =========== -->
-    <script src="assets/js/bootstrap.bundle.js.map"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- =========== lib firebase =========== -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <!-- =========== Config Firebase =========== -->
+    <script src="assets/js/firebase-config.js"></script>
+    <!-- =========== Many Boxs =========== -->
+    <script type="module" src="assets/js/many-boxs.js"></script>
     <!-- =========== Main JS =========== -->
     <script src="assets/js/main.js"></script>
   </body>

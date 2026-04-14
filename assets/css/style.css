@@ -414,11 +414,11 @@ body {
   font-weight: bold;
 }
 
-.container .week-box {
+.month-star {
   margin-top: 60px;
 }
 
-.container .week-box .box {
+.month-star .box {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -435,20 +435,20 @@ body {
   margin: 0 10px;
 }
 
-.container .week-box .box .number-card {
+.month-star .box .number-card {
   font-size: 22px;
   font-weight: bold;
   color: var(--primary-color);
 }
 
-.container .week-box .box .logo .week-img {
+.month-star .box .logo .week-img {
   width: 120px;
   margin-bottom: 10px;
 }
 
-.container .week-box .box .name,
-.container .week-box .box .book-name,
-.container .week-box .box .number-page {
+.month-star .box .name,
+.month-star .box .book-name,
+.month-star .box .number-page {
   width: 100%;
   text-align: center;
   padding: 10px;
@@ -460,6 +460,6 @@ body {
   color: var(--primary-color);
 }
 
-.container .week-box .box.first {
+.month-star .box.first {
   transform: scale(1.1);
 }

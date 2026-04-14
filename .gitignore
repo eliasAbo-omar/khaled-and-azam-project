@@ -16,3 +16,4 @@ secrets.json, config.json
 dump.rdb
 coverage/, *.lcov
 .tox/, .pytest_cache/
+.env

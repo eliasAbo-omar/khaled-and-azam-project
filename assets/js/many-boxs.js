@@ -1,5 +1,11 @@
+// import { db } from "./firebase-config.js";
+// import { ref, push, onValue } from "firebase/database";
 import { db } from "./firebase-config.js";
-import { ref, push, onValue } from "firebase/database";
+import {
+  ref,
+  push,
+  onValue,
+} from "https://www.gstatic.com/firebasejs/12.11.0/firebase-database.js";
 
 // 1. دالة توحيد الأسماء لضمان دقة الجمع (تعالج الهمزات والتاء المربوطة)
 function normalizeName(name) {

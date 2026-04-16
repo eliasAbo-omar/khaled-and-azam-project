@@ -1,5 +1,7 @@
 let linkActive = document.querySelectorAll("li a");
 let header = document.querySelector(".header");
+const svg = document.getElementById("svg");
+const navBar = document.getElementById("nav");
 
 // =========== Active Class ===========
 
@@ -10,6 +12,7 @@ linkActive.forEach((e) => {
 
       e.classList.add("active");
     });
+    navBar.classList.toggle("open-menu");
   });
 });
 
@@ -31,4 +34,8 @@ window.addEventListener("load", () => {
   setTimeout(() => {
     book.classList.add("open");
   }, 500);
+});
+
+svg.addEventListener("click", () => {
+  navBar.classList.toggle("open-menu");
 });

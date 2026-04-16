@@ -106,7 +106,7 @@ function renderBoxes(totalsObj, containerId) {
       let rankText = index === 0 ? "المركز الأول" : `المركز ${index + 1}`;
 
       container.innerHTML += `
-        <div class="col-md-4">
+        <div class="col-md-4 col-sm-12">
           <div class="box ${specialClass}">
             <div class="number-card">${rankText}</div>
             <div class="logo">

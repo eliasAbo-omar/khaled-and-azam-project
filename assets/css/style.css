@@ -463,3 +463,55 @@ body {
 .month-star .box.first {
   transform: scale(1.1);
 }
+
+/* =========== input box =========== */
+
+.inputs .container .display-input {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background: linear-gradient(to top right, #053147, #0d3d57);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.5);
+  margin-top: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.151);
+  text-align: center;
+}
+
+.inputs .container .display-input .box-input {
+  margin: 50px auto 50px;
+  padding: 10px;
+  width: 600px;
+}
+
+.inputs .container .display-input .box-input input {
+  width: 100%;
+  padding: 10px 20px 10px 10px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  word-spacing: 4px;
+}
+
+.inputs .container .display-input .send {
+  width: 600px;
+  margin: 0 auto;
+  padding: 10px;
+  background: var(--second-color);
+  outline: none;
+  border: none;
+  font-size: 20px;
+  line-height: 1.6;
+  color: var(--primary-color);
+  border-radius: 10px;
+  transition: all 0.5s;
+}
+
+.inputs .container .display-input .send:hover {
+  background: #ffdf9e;
+  transform: scale(1.1);
+}

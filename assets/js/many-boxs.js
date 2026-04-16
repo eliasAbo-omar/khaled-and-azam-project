@@ -102,9 +102,19 @@ function renderBoxes(totalsObj, containerId) {
 
   sorted.forEach((item, index) => {
     if (index < 3) {
-      let specialClass = index === 0 ? "first" : "";
-      let rankText = index === 0 ? "المركز الأول" : `المركز ${index + 1}`;
+      let specialClass = "";
+      let rankText = "";
 
+      if (index === 0) {
+        specialClass = "first";
+        rankText = "المركز الأول";
+      } else if (index === 1) {
+        specialClass = "";
+        rankText = "المركز الثاني";
+      } else if (index === 2) {
+        specialClass = "";
+        rankText = "المركز الثالث";
+      }
       container.innerHTML += `
         <div class="col-md-4 col-sm-12">
           <div class="box ${specialClass}">

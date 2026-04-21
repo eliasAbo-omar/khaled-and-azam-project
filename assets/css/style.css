@@ -373,6 +373,12 @@ body {
   }
 }
 
+@media (max-width: 572px) {
+  .home .about {
+    width: 300px;
+  }
+}
+
 /* =========== advice =========== */
 
 .advice {
@@ -395,6 +401,14 @@ body {
 @media (max-width: 768px) {
   .advice {
     width: 400px;
+    text-align: center;
+    padding: 3px;
+  }
+}
+
+@media (max-width: 572px) {
+  .advice {
+    width: 300px;
   }
 }
 

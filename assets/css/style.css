@@ -70,6 +70,15 @@ body {
   line-height: 1.6;
 }
 
+textarea {
+  width: 100%;
+  resize: none;
+  padding: 10px;
+  height: 150px;
+  min-height: 100px;
+  max-height: 300px;
+}
+
 .padding {
   padding: 100px 0;
 }
@@ -470,17 +479,6 @@ body {
 }
 
 @media (max-width: 1199px) {
-  .row {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .col-md-4 {
-    width: 500px;
-  }
-
   .month-star .box {
     margin-top: 10px;
   }
@@ -581,6 +579,13 @@ body {
   word-spacing: 4px;
 }
 
+.inputs .container .display-input .box-input ::placeholder {
+  color: var(--primary-color);
+  font-size: 20px;
+  font-weight: bold;
+  opacity: 0.6;
+}
+
 .inputs .container .display-input .send {
   width: 600px;
   margin: 0 auto;
@@ -607,5 +612,120 @@ body {
 
   .inputs .container .display-input .send {
     width: 100%;
+  }
+
+  .inputs .container .display-input .box-input ::placeholder {
+    font-size: 15px;
+  }
+}
+
+/* =========== comments =========== */
+
+.comments .comment-box {
+  margin-top: 30px;
+}
+.comments .comment-box .row {
+  gap: 10px;
+  justify-content: center;
+}
+
+.comments .comment-box .commentBox {
+  overflow: hidden;
+  text-align: center;
+  border: 2px solid var(--primary-color);
+  border-radius: 5px;
+}
+
+.comments .comment-box .commentBox .nameCom {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  border-bottom: 3px solid var(--primary-color);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.comments .comment-box .commentBox .bookCom {
+  margin-bottom: 20px;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: 3px solid var(--primary-color);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.comments .comment-box .commentBox .comment {
+  max-width: 100%;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 0;
+  color: var(--primary-color);
+}
+
+.comments .inputs-com {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.comments .inputs-com input {
+  width: 40%;
+  margin: 0 2% 20px;
+  padding: 10px 12px 10px 10px;
+  border: none;
+  border-bottom: 2px solid black;
+  border-radius: 5px;
+  outline: none;
+  color: var(--primary-color);
+  box-shadow: var(--shadow-main);
+}
+
+.comments .inputs-com ::placeholder {
+  color: var(--primary-color);
+  font-size: 20px;
+  font-weight: bold;
+  opacity: 0.6;
+}
+
+.comments .inputs-com textarea {
+  border: none;
+  outline: none;
+  box-shadow: 6px 6px 10px var(--primary-color);
+  border-radius: 15px;
+  border-bottom: 2px solid var(--primary-color);
+  border-right: 2px solid var(--primary-color);
+  margin-bottom: 30px;
+}
+
+.comments .inputs-com #sendCm {
+  width: 600px;
+  margin: 0 auto;
+  padding: 10px;
+  background: var(--second-color);
+  outline: none;
+  border: none;
+  font-size: 20px;
+  line-height: 1.6;
+  color: var(--primary-color);
+  border-radius: 10px;
+  transition: all 0.5s;
+}
+
+.comments .inputs-com #sendCm:hover {
+  transform: scale(1.1);
+  background: #ffdf9e;
+}
+
+@media (max-width: 572px) {
+  .comments .comment-box .commentBox {
+    width: 300px;
+  }
+
+  .comments .inputs-com #sendCm {
+    width: 100%;
+  }
+
+  .comments .inputs-com ::placeholder {
+    font-size: 15px;
   }
 }

@@ -116,7 +116,7 @@ function renderBoxes(totalsObj, containerId) {
         rankText = "المركز الثالث";
       }
       container.innerHTML += `
-        <div class="col-md-4 col-sm-12">
+        <div class="col-md-4">
           <div class="box ${specialClass}">
             <div class="number-card">${rankText}</div>
             <div class="logo">

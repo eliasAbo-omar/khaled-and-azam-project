@@ -170,6 +170,29 @@
       <div class="text-head">
         <h1 class="head-read color-1">إقتباسات</h1>
       </div>
+      <div class="container">
+        <div class="comment-box">
+          <div class="row">
+            <div class="col-md-4 col-sm-6 col-lg-3 commentBox">
+              <h3 class="nameCom" maxlength="15">إلياس خالد الراعي</h3>
+              <span class="bookCom">ابي الغني وابي الفقير</span>
+              <p class="comment">
+                "القراءة هي المفتاح الذي يفتح لنا أبواب المعرفة ويوسع مدارك
+                العقل البشري. عندما نقرأ كتاباً، فنحن لا نطلع على مجرد كلمات، بل
+                نعيش تجارب الآخرين ونكتشف عوالم جديدة لم نكن لنعرفها لولا تلك
+                الصفحات. لذا، احرص دائماً على تخصيص وقت يومي للقراءة لتطوير ذاتك
+                وبناء فكر مستنير يساعدك في فهم الحياة بشكل أفضل وأعمق."
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="inputs-com">
+          <input type="text" placeholder="إكتب إسمك هنا" maxlength="40" />
+          <input type="text" placeholder="إكتب كتابك هنا" maxlength="60" />
+          <textarea maxlength="300" placeholder="إكتب تعليقك هنا"></textarea>
+          <button id="sendCm">إرسال الكومنت</button>
+        </div>
+      </div>
     </section>
     <!-- =========== advice =========== -->
     <section class="advice">
@@ -217,9 +240,11 @@
     <script src="https://www.gstatic.com/firebasejs/12.11.0/firebase-database.js"></script> -->
     <!-- =========== Config Firebase =========== -->
     <script type="module" src="assets/js/firebase-config.js"></script>
-    <!-- =========== autoName =========== -->
+    <!-- =========== comment JS =========== -->
+    <script src="assets/js/comment.js"></script>
+    <!-- =========== autoName JS =========== -->
     <script src="assets/js/autoName.js"></script>
-    <!-- =========== animation =========== -->
+    <!-- =========== animation JS =========== -->
     <script src="assets/js/animation.js"></script>
     <!-- =========== Many Boxs =========== -->
     <script type="module" src="assets/js/many-boxs.js"></script>

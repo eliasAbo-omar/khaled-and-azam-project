@@ -29,6 +29,7 @@
     "motion": "^12.38.0",
     "npm": "^11.13.0",
     "simple-icons": "^16.18.0",
+    "swiper": "^12.1.4",
     "zod": "^4.3.6"
   },
   "devDependencies": {

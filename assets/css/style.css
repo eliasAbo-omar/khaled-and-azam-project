@@ -623,7 +623,9 @@ textarea {
 
 .comments .comment-box {
   margin-top: 30px;
+  overflow: hidden;
 }
+
 .comments .comment-box .row {
   gap: 10px;
   justify-content: center;
@@ -673,6 +675,7 @@ textarea {
   margin: 0 2% 20px;
   padding: 10px 12px 10px 10px;
   border: none;
+  font-size: 22px;
   border-bottom: 2px solid black;
   border-radius: 5px;
   outline: none;
@@ -690,6 +693,8 @@ textarea {
 .comments .inputs-com textarea {
   border: none;
   outline: none;
+  font-size: 22px;
+  color: var(--primary-color);
   box-shadow: 6px 6px 10px var(--primary-color);
   border-radius: 15px;
   border-bottom: 2px solid var(--primary-color);

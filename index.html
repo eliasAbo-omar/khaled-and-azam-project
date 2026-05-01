@@ -172,7 +172,9 @@
       </div>
       <div class="container">
         <div class="comment-box">
-          <div class="row" id="comment-box"></div>
+          <div class="mySwiper">
+            <div class="row" id="comment-box"></div>
+          </div>
         </div>
         <div class="inputs-com">
           <input
@@ -192,6 +194,7 @@
             placeholder="إكتب تعليقك هنا"
             id="commentCm"
           ></textarea>
+          <div id="char-count">300 حرف متبقي</div>
           <button id="sendCm" onclick="addCm()">إرسال الكومنت</button>
         </div>
       </div>
@@ -244,6 +247,8 @@
     <script type="module" src="assets/js/firebase-config.js"></script>
     <!-- =========== comment JS =========== -->
     <script type="module" src="assets/js/comment.js"></script>
+    <!-- =========== autoName JS =========== -->
+    <script src="assets/js/textarea.js"></script>
     <!-- =========== autoName JS =========== -->
     <script src="assets/js/autoName.js"></script>
     <!-- =========== animation JS =========== -->

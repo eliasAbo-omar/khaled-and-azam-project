@@ -624,6 +624,7 @@ textarea {
 .comments .comment-box {
   margin-top: 30px;
   overflow: hidden;
+  text-align: center;
 }
 
 .comments .comment-box .row {

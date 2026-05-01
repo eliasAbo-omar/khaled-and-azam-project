@@ -5,12 +5,6 @@ import {
   onValue,
 } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-database.js";
 
-import Swiper from "swiper";
-import { Pagination, Autoplay, Grid } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/grid";
-
 let swiperInstance = null;
 
 // add comment server
@@ -37,43 +31,6 @@ export function addCm() {
 
 window.addCm = addCm;
 
-function handelSwiper(count) {
-  const container = document.getElementById("comment-box");
-
-  if (count >= 6) {
-    container.classList.add("swiper-wrapper");
-    container.classList.remove("row");
-
-    if (!swiperInstance) {
-      swiperInstance = new Swiper(".mySwiper", {
-        modules: [Pagination, Autoplay, Grid],
-        grabCursor: true,
-        slidesPerView: 3,
-        grid: {
-          rows: 2,
-          fill: "row",
-        },
-        spaceBetween: 20,
-        pagination: { el: ".swiper-pagination", clickable: true },
-        breakpoints: {
-          320: { slidesPerView: 1, grid: { rows: 2 } },
-          768: { slidesPerView: 2, grid: { rows: 2 } },
-          1024: { slidesPerView: 3, grid: { rows: 2 } },
-        },
-      });
-    } else {
-      swiperInstance.update();
-    }
-  } else {
-    if (swiperInstance) {
-      swiperInstance.destroy(true, true);
-      swiperInstance = null;
-      container.classList.remove("swiper-wrapper");
-      container.classList.add("row");
-    }
-  }
-}
-
 // Watch Live On Server
 onValue(ref(db, "all_comments"), (snapshot) => {
   const data = snapshot.val();
@@ -83,26 +40,20 @@ onValue(ref(db, "all_comments"), (snapshot) => {
     return;
   }
 
-  const commentsArray = Object.entries(data);
-  const totalCount = commentsArray.length;
+  const comments = Object.entries(data);
   container.innerHTML = "";
 
-  renderComment(data, totalCount);
-
-  handelSwiper(totalCount);
+  renderComment(data);
 });
 
-function renderComment(data, count) {
+function renderComment(data) {
   const container = document.getElementById("comment-box");
 
   Object.keys(data).forEach((e) => {
     const comment = data[e];
 
-    const slideClass =
-      count >= 6 ? "swiper-slide" : "col-md-4 col-sm-6 col-lg-3";
-
     container.innerHTML += `
-            <div class=" ${slideClass} commentBox">
+            <div class="col-md-6 col-cm-10 col-lg-3 commentBox">
               <h3 class="nameCom"> ${comment.nameCm} </h3>
               <span class="bookCom"> ${comment.bookCm} </span>
               <p class="comment">

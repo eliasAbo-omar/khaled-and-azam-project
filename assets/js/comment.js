@@ -5,7 +5,7 @@ import {
   onValue,
 } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-database.js";
 
-import Swiper from "https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.mjs";
+import Swiper from "swiper";
 import { Pagination, Autoplay, Grid } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";

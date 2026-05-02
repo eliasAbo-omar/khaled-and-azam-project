@@ -623,8 +623,13 @@ textarea {
 
 .comments .comment-box {
   margin-top: 30px;
-  overflow: hidden;
-  text-align: center;
+}
+
+.comments .comment-box .normal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  width: 100%;
 }
 
 .comments .comment-box .row {
@@ -637,6 +642,7 @@ textarea {
   text-align: center;
   border: 2px solid var(--primary-color);
   border-radius: 5px;
+  padding: 5px;
 }
 
 .comments .comment-box .commentBox .nameCom {
@@ -720,6 +726,19 @@ textarea {
 .comments .inputs-com #sendCm:hover {
   transform: scale(1.1);
   background: #ffdf9e;
+}
+
+.mySwiper {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .comments .comment-box .normal-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 @media (max-width: 572px) {

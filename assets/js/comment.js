@@ -5,8 +5,6 @@ import {
   onValue,
 } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-database.js";
 
-let swiperInstance = null;
-
 // add comment server
 export function addCm() {
   const nameCm = document.getElementById("nameCm").value.trim();
@@ -53,7 +51,7 @@ function renderComment(data) {
     const comment = data[e];
 
     container.innerHTML += `
-            <div class="col-md-6 col-cm-10 col-lg-3 commentBox">
+            <div class="commentBox swiper-slide">
               <h3 class="nameCom"> ${comment.nameCm} </h3>
               <span class="bookCom"> ${comment.bookCm} </span>
               <p class="comment">

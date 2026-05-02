@@ -5,17 +5,23 @@ import {
   onValue,
 } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-database.js";
 
+import { sanitizeInput } from "./security.js";
+
 // add comment server
 export function addCm() {
   const nameCm = document.getElementById("nameCm").value.trim();
   const bookCm = document.getElementById("bookCm").value.trim();
   const commentCm = document.getElementById("commentCm").value;
 
-  if (nameCm && bookCm && commentCm) {
+  const safeName = sanitizeInput(nameCm);
+  const safeBook = sanitizeInput(bookCm);
+  const safeComment = sanitizeInput(commentCm);
+
+  if (safeName && safeBook && safeComment) {
     push(ref(db, "all_comments"), {
-      nameCm: nameCm,
-      bookCm: bookCm,
-      commentCm: commentCm,
+      nameCm: safeName,
+      bookCm: safeBook,
+      commentCm: safeComment,
     });
 
     document.getElementById("nameCm").value = "";

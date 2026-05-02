@@ -7,27 +7,31 @@ import {
   onValue,
 } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-database.js";
 
-// 1. دالة توحيد الأسماء لضمان دقة الجمع (تعالج الهمزات والتاء المربوطة)
+import { sanitizeInput } from "./security.js";
+
 function normalizeName(name) {
   if (!name) return "";
   return name.trim().replace(/[أإآ]/g, "ا").replace(/ة/g, "ه");
 }
 
-// 2. دالة إضافة البيانات (يتم استدعاؤها من الزر)
 export function addNewReader() {
   const name = document.getElementById("userName").value.trim();
   const book = document.getElementById("userBook").value.trim();
   const pagesStr = document.getElementById("userPages").value.trim();
   const pages = parseInt(pagesStr);
 
-  if (name && book && !isNaN(pages)) {
+  // for security
+  const safeName = sanitizeInput(name);
+  const safeBook = sanitizeInput(book);
+
+  if (safeName && safeBook && !isNaN(pages)) {
     push(ref(db, "all_records"), {
-      name: name,
-      book: book,
+      name: safeName,
+      book: safeBook,
       pages: pages,
       date: Date.now(),
     });
-    // تنظيف الحقول بعد الإضافة
+
     document.getElementById("userName").value = "";
     document.getElementById("userBook").value = "";
     document.getElementById("userPages").value = "";
@@ -36,10 +40,8 @@ export function addNewReader() {
   }
 }
 
-// ربط الدالة بالنافذة لتعمل مع onclick في HTML
 window.addNewReader = addNewReader;
 
-// 3. مراقبة البيانات وحساب المجموع (أسبوعي/شهري)
 onValue(ref(db, "all_records"), (snapshot) => {
   const data = snapshot.val();
   if (!data) {
@@ -51,9 +53,9 @@ onValue(ref(db, "all_records"), (snapshot) => {
   }
 
   const now = new Date();
-  // بداية الشهر الحالي (يوم 1)
+
   const startMonth = new Date(now.getFullYear(), now.getMonth(), 1).getTime();
-  // بداية الأسبوع الحالي (من يوم الأحد الماضي)
+
   const startWeek = new Date(
     now.getFullYear(),
     now.getMonth(),
@@ -66,18 +68,16 @@ onValue(ref(db, "all_records"), (snapshot) => {
   Object.values(data).forEach((record) => {
     const sName = normalizeName(record.name);
 
-    // تجميع بيانات الشهر
     if (record.date >= startMonth) {
       if (!monthlyTotals[sName]) monthlyTotals[sName] = { pages: 0, book: "" };
       monthlyTotals[sName].pages += record.pages;
-      monthlyTotals[sName].book = record.book; // آخر كتاب
+      monthlyTotals[sName].book = record.book;
     }
 
-    // تجميع بيانات الأسبوع
     if (record.date >= startWeek) {
       if (!weeklyTotals[sName]) weeklyTotals[sName] = { pages: 0, book: "" };
       weeklyTotals[sName].pages += record.pages;
-      weeklyTotals[sName].book = record.book; // آخر كتاب
+      weeklyTotals[sName].book = record.book;
     }
   });
 
@@ -85,13 +85,11 @@ onValue(ref(db, "all_records"), (snapshot) => {
   renderBoxes(monthlyTotals, "container-month");
 });
 
-// 4. دالة الرسم (تنسيق الكروت)
 function renderBoxes(totalsObj, containerId) {
   const container = document.getElementById(containerId);
   if (!container) return;
   container.innerHTML = "";
 
-  // تحويل البيانات لمصفوفة مرتبة
   const sorted = Object.entries(totalsObj)
     .map(([name, data]) => ({
       name: name,

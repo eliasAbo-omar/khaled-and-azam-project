@@ -840,4 +840,8 @@ textarea {
     flex-direction: column;
     gap: 20px;
   }
+
+  .container .bad-readers .dashBad .arrow {
+    display: none;
+  }
 }

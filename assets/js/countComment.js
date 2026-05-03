@@ -11,7 +11,6 @@ onValue(ref(db, "all_comments"), (snapshot) => {
 
   if (dataCm) {
     const countData = Object.entries(dataCm);
-
     dataNumberComment(countData.length);
   } else {
     dataNumberComment(0);

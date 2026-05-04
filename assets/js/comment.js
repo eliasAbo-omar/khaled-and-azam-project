@@ -3,12 +3,13 @@ import {
   ref,
   push,
   onValue,
+  get,
+  set,
 } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-database.js";
 
 import { sanitizeInput } from "./security.js";
 
-// add comment server
-export function addCm() {
+export async function addCm() {
   const nameCm = document.getElementById("nameCm").value.trim();
   const bookCm = document.getElementById("bookCm").value.trim();
   const commentCm = document.getElementById("commentCm").value;
@@ -18,11 +19,28 @@ export function addCm() {
   const safeComment = sanitizeInput(commentCm);
 
   if (safeName && safeBook && safeComment) {
-    push(ref(db, "all_comments"), {
+    const dbRef = ref(db, "all_comments");
+    const snapshot = await get(dbRef);
+    let nextId = 1;
+
+    if (snapshot.exists()) {
+      const data = snapshot.val();
+
+      const keys = Object.keys(data)
+        .map(Number)
+        .filter((n) => !isNaN(n));
+      if (keys.length > 0) {
+        nextId = Math.max(...keys) + 1;
+      }
+    }
+
+    await set(ref(db, `all_comments/${nextId}`), {
       nameCm: safeName,
       bookCm: safeBook,
       commentCm: safeComment,
+      date: Date.now(),
     });
+    // ---------------------------------------
 
     document.getElementById("nameCm").value = "";
     document.getElementById("bookCm").value = "";
@@ -32,6 +50,8 @@ export function addCm() {
     alert("إملاء البيانات بشكل صحيح");
   }
 }
+
+window.addCm = addCm;
 
 window.addCm = addCm;
 

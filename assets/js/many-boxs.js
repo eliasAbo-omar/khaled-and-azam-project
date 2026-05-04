@@ -5,6 +5,8 @@ import {
   ref,
   push,
   onValue,
+  get,
+  set,
 } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-database.js";
 
 import { sanitizeInput } from "./security.js";
@@ -14,23 +16,39 @@ function normalizeName(name) {
   return name.trim().replace(/[أإآ]/g, "ا").replace(/ة/g, "ه");
 }
 
-export function addNewReader() {
+export async function addNewReader() {
   const name = document.getElementById("userName").value.trim();
   const book = document.getElementById("userBook").value.trim();
   const pagesStr = document.getElementById("userPages").value.trim();
   const pages = parseInt(pagesStr);
 
-  // for security
   const safeName = sanitizeInput(name);
   const safeBook = sanitizeInput(book);
 
   if (safeName && safeBook && !isNaN(pages)) {
-    push(ref(db, "all_records"), {
+    const dbRef = ref(db, "all_records");
+    const snapshot = await get(dbRef);
+    let nextId = 1;
+
+    if (snapshot.exists()) {
+      const data = snapshot.val();
+
+      const keys = Object.keys(data)
+        .map(Number)
+        .filter((n) => !isNaN(n));
+      if (keys.length > 0) {
+        nextId = Math.max(...keys) + 1;
+      }
+    }
+
+    await set(ref(db, `all_records/${nextId}`), {
       name: safeName,
       book: safeBook,
       pages: pages,
       date: Date.now(),
+      numericId: nextId,
     });
+    // ---------------------------------
 
     document.getElementById("userName").value = "";
     document.getElementById("userBook").value = "";

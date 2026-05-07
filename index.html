@@ -261,12 +261,14 @@
               type="text"
               placeholder="أكتب إسمك هنا"
               id="userName"
+              maxlength="40"
               required
             />
             <input
               type="text"
               placeholder="أكتب كتابك هنا"
               id="userBook"
+              maxlength="60"
               required
             />
             <input
@@ -282,6 +284,28 @@
         </div>
       </div>
     </section>
+    <!-- =========== advice =========== -->
+    <div class="advice">
+      <div class="adv-text">
+        <p class="mb-0 color-1">اجعل العلم وسيلة للصلاح لا للفتنة .</p>
+      </div>
+    </div>
+    <!-- =========== reports =========== -->
+    <section class="reports padding">
+      <div class="text-head">
+        <h1 class="head-read color-1">التقريرات</h1>
+      </div>
+      <div class="container">
+        <div class="inputBox" id="inputBox">
+          <input type="text" maxlength="40" placeholder="اكتب إسمك هنا" />
+          <button class="send" onclick="getReport()">
+            إرسال الإسم للتقرير
+          </button>
+        </div>
+        <div class="report-container" id="main-report-wrapper"></div>
+        <div class="total" id="total"></div>
+      </div>
+    </section>
     <!-- =========== BootStrap =========== -->
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <!-- =========== lib firebase =========== -->
@@ -293,6 +317,8 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <!-- =========== badReaders JS =========== -->
     <script type="module" src="assets/js/badReaders.js"></script>
+    <!-- =========== Security JS =========== -->
+    <script type="module" src="assets/js/reports.js"></script>
     <!-- =========== Security JS =========== -->
     <script type="module" src="assets/js/security.js"></script>
     <!-- =========== commentCount JS =========== -->

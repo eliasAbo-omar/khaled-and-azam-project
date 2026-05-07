@@ -13,7 +13,11 @@ import { sanitizeInput } from "./security.js";
 
 function normalizeName(name) {
   if (!name) return "";
-  return name.trim().replace(/[أإآ]/g, "ا").replace(/ة/g, "ه");
+  return name
+    .trim()
+    .replace(/[أإآ]/g, "ا")
+    .replace(/ة/g, "ه")
+    .replace(/\s+/g, " ");
 }
 
 export async function addNewReader() {

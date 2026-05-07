@@ -848,3 +848,149 @@ textarea {
     display: none;
   }
 }
+
+/* =========== reports =========== */
+
+.container .report-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  padding: 10px;
+  margin-top: 30px;
+}
+
+.container .report-container .name-container h1 {
+  margin: 0;
+  padding: 15px;
+  font-size: 26px;
+  font-weight: bold;
+  background-color: var(--second-color);
+  border-radius: 10px;
+  color: var(--primary-color);
+}
+
+.container .report-container .line {
+  width: 3px;
+  background: black;
+  height: 700px;
+  border-radius: 5px;
+}
+
+.container .report-container .report {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  width: 55%;
+  align-items: center;
+  padding: 10px;
+  margin: 0;
+}
+
+.container .report-container .report .reportb {
+  width: 300px;
+  height: 400px;
+  margin: 0 0 0 30px;
+  padding: 12px;
+  background-color: var(--second-color);
+  border-radius: 15px;
+  box-shadow: var(--shadow-main);
+  color: var(--primary-color);
+}
+
+.container .inputBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.container .inputBox input {
+  width: 400px;
+  padding: 10px 20px 10px 10px;
+  margin-bottom: 30px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid var(--primary-color);
+  word-spacing: 4px;
+  box-shadow: var(--shadow-main);
+  color: var(--primary-color);
+}
+
+.container .inputBox .send {
+  width: 600px;
+  margin: 0 auto;
+  padding: 10px;
+  background: var(--second-color);
+  outline: none;
+  border: none;
+  font-size: 20px;
+  line-height: 1.6;
+  color: var(--primary-color);
+  border-radius: 10px;
+  transition: all 0.5s;
+  box-shadow: var(--shadow-main);
+}
+
+.container .inputBox .send:hover {
+  background: #ffdf9e;
+  transform: scale(1.1);
+}
+
+.container .total {
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  width: fit-content;
+  margin: 60px auto 0;
+  box-shadow: var(--shadow-main);
+  display: none;
+}
+
+.container .total h3 {
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.container .total p {
+  margin: 0;
+  width: 100%;
+  font-size: 22px;
+}
+
+@media (max-width: 1199px) {
+  .container .report-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .container .report-container .line {
+    display: none;
+  }
+
+  .container .report-container .report {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container .report-container .report .reportb {
+    width: 100%;
+    margin: 30px 0 0 0;
+  }
+
+  .container .inputBox .send {
+    width: 100%;
+  }
+
+  .container .report-container .name-container h1 {
+    text-align: center;
+  }
+
+  .container .inputBox input {
+    width: 100%;
+  }
+}

@@ -67,10 +67,13 @@ window.addNewReader = addNewReader;
 onValue(ref(db, "all_records"), (snapshot) => {
   const data = snapshot.val();
   if (!data) {
-    document.getElementById("container-week").innerHTML =
-      "<p>لا توجد بيانات حالياً</p>";
-    document.getElementById("container-month").innerHTML =
-      "<p>لا توجد بيانات حالياً</p>";
+    const isEn = localStorage.getItem("selectedLang") === "en";
+    const noDataMsg = isEn
+      ? "<p>No data available currently</p>"
+      : "<p>لا توجد بيانات حالياً</p>";
+
+    document.getElementById("container-week").innerHTML = noDataMsg;
+    document.getElementById("container-month").innerHTML = noDataMsg;
     return;
   }
 

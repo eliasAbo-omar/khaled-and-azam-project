@@ -3,7 +3,14 @@ const countDisplay = document.getElementById("char-count");
 
 textarea.addEventListener("input", () => {
   const remaining = 300 - textarea.value.length;
-  countDisplay.innerText = `${remaining} حرف متبقي`;
 
-  countDisplay.style.color = remaining < 20 ? "red" : "black";
+  if (localStorage.getItem("selectedLang") === "en") {
+    countDisplay.textContent = `${remaining} characters remaining`;
+
+    countDisplay.style.color = remaining < 20 ? "red" : "black";
+  } else {
+    countDisplay.innerText = `${remaining} حرف متبقي`;
+
+    countDisplay.style.color = remaining < 20 ? "red" : "black";
+  }
 });

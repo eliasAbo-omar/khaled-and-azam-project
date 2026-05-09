@@ -47,7 +47,11 @@ export async function addCm() {
     document.getElementById("commentCm").value = "";
     document.getElementById("char-count").innerText = "300 حرف متبقي";
   } else {
-    alert("إملاء البيانات بشكل صحيح");
+    if (localStorage.getItem("selectedLang") === "en") {
+      alert("Please fill in all fields before submitting your comment.");
+    } else {
+      alert("يرجى إكمال كافة البيانات قبل إرسال تعليقك.");
+    }
   }
 }
 
@@ -55,12 +59,15 @@ window.addCm = addCm;
 
 window.addCm = addCm;
 
-// Watch Live On Server
 onValue(ref(db, "all_comments"), (snapshot) => {
   const data = snapshot.val();
   const container = document.getElementById("comment-box");
   if (!data) {
-    container.innerHTML = `لا يوجد اي إقتباسات في الصفحة`;
+    const isEn = localStorage.getItem("selectedLang") === "en";
+    const noDataMsg = isEn
+      ? "<p>No data available currently</p>"
+      : "<p>لا توجد بيانات حالياً</p>";
+    container.innerHTML = noDataMsg;
     return;
   }
 

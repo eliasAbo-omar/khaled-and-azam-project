@@ -29,7 +29,11 @@ export async function getReport() {
   const searchName = normalizeName(sanitizeInput(inputField.value));
 
   if (!searchName) {
-    alert("يرجى كتابة الاسم");
+    if (localStorage.getItem("selectedLang") === "en") {
+      alert("please enter a name");
+    } else {
+      alert("الرجاء إدخال اسم");
+    }
     return;
   }
 
@@ -38,7 +42,11 @@ export async function getReport() {
     const snapshot = await get(recordsRef);
 
     if (!snapshot.exists()) {
-      alert("لا توجد بيانات حالياً");
+      if (localStorage.getItem("selectedLang") === "en") {
+        alert("No data available currently");
+      } else {
+        alert("لا توجد بيانات حالياً");
+      }
       return;
     }
 
@@ -97,7 +105,11 @@ export async function getReport() {
         container.style.display = "block";
         if (totalDiv) totalDiv.style.display = "block";
       } else {
-        alert("الاسم غير موجود");
+        if (localStorage.getItem("selectedLang") === "en") {
+          alert("Name not found");
+        } else {
+          alert("الاسم غير موجود");
+        }
       }
     }
   } catch (error) {

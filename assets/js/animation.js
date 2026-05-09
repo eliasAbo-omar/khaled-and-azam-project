@@ -1,70 +1,48 @@
 let inputs = document.querySelectorAll("input");
-const sub = document.getElementById("send");
 let textArea = document.querySelectorAll("textarea");
+const sub = document.getElementById("send");
 
-textArea.forEach((e) => {
-  const placeHolder = e.placeholder;
+function setupTypewriterEffect(el) {
   let timeClear = [];
+  let originalText = "";
 
   const clearAllTime = () => {
-    timeClear.forEach((t) => {
-      clearTimeout(t);
-      timeClear = [];
-    });
+    timeClear.forEach((t) => clearTimeout(t));
+    timeClear = [];
   };
 
-  e.addEventListener("focus", () => {
+  el.addEventListener("focus", () => {
     clearAllTime();
-    e.placeholder = "";
-    const letter = placeHolder.split("");
 
-    letter.forEach((l, i) => {
+    originalText = el.placeholder;
+    el.placeholder = "";
+
+    const letters = originalText.split("");
+
+    letters.forEach((l, i) => {
       const p = setTimeout(() => {
-        e.placeholder += l;
+        el.placeholder += l;
       }, 100 * i);
       timeClear.push(p);
     });
   });
 
-  e.addEventListener("blur", () => {
-    e.placeholder = placeHolder;
+  el.addEventListener("blur", () => {
     clearAllTime();
+    if (originalText) {
+      el.placeholder = originalText;
+    }
   });
-});
+}
 
+textArea.forEach((e) => setupTypewriterEffect(e));
 inputs.forEach((e) => {
-  const placeHolder = e.placeholder;
-  let timeClear = [];
-
-  const clearAllTime = () => {
-    timeClear.forEach((t) => {
-      clearTimeout(t);
-      timeClear = [];
-    });
-  };
-
-  e.addEventListener("focus", () => {
-    clearAllTime();
-    e.placeholder = "";
-    const letter = placeHolder.split("");
-
-    letter.forEach((l, i) => {
-      const p = setTimeout(() => {
-        e.placeholder += l;
-      }, i * 100);
-      timeClear.push(p);
-    });
-  });
-
-  e.addEventListener("blur", () => {
-    e.placeholder = placeHolder;
-    clearAllTime();
-  });
+  setupTypewriterEffect(e);
 
   e.addEventListener("keypress", (event) => {
     if (event.key === "Enter") {
       event.preventDefault();
-      sub.click();
+      if (sub) sub.click();
     }
   });
 });

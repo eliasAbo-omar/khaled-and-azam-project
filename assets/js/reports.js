@@ -23,7 +23,6 @@ export async function getReport() {
   const container = document.getElementById("main-report-wrapper");
   const totalDiv = document.getElementById("total");
 
-  // إخفاء العناصر في بداية كل بحث جديد لضمان نظافة الواجهة
   container.style.display = "none";
   if (totalDiv) totalDiv.style.display = "none";
 
@@ -37,6 +36,11 @@ export async function getReport() {
   try {
     const recordsRef = ref(db, "all_records");
     const snapshot = await get(recordsRef);
+
+    if (!snapshot.exists()) {
+      alert("لا توجد بيانات حالياً");
+      return;
+    }
 
     if (snapshot.exists()) {
       const allData = snapshot.val();
@@ -58,20 +62,25 @@ export async function getReport() {
           })
           .join("");
 
-        // حقن التقرير والمجموع
         container.innerHTML = `
                     <div class="report-container">
                         <div class="name-container">
-                            <h1>مرحبا بك يا ${userRecords[0].name}</h1>
+                            <h1>
+                            <span data-key="welcome_user">مرحبا بك يا </span>
+                            <span>${userRecords[0].name}</span>
+                            </h1>
                         </div>
                         <span class="line"></span>
                         <div class="report">
                             <ul class="reportb" id="report-book">
-                                <li><h1>الكتب (${userRecords.length})</h1></li>
+                                <li><h1>
+                                <span data-key="books_count">الكتب </span><span>(${userRecords.length})</span></h1></li>
                                 ${booksLis}
                             </ul>
                             <ul class="reportb" id="report-page">
-                                <li><h1>عدد الصفحات</h1></li>
+                                <li><h1>
+                                <span data-key="pages_count">عدد الصفحات</span>
+                                </h1></li>
                                 ${pagesLis}
                             </ul>
                         </div>
@@ -79,11 +88,12 @@ export async function getReport() {
 
         if (totalDiv) {
           totalDiv.innerHTML = `
-                        <h3>المجموع الكلي للصفحات</h3>
+                        <h3>
+                        <span data-key="total_pages_label">المجموع الكلي للصفحات</span>
+                        </h3>
                         <p class="totalNumbers">${totalSum.toLocaleString()}</p>`;
         }
 
-        // --- الإظهار (Show) ---
         container.style.display = "block";
         if (totalDiv) totalDiv.style.display = "block";
       } else {

@@ -148,6 +148,22 @@ textarea {
   width: 100%;
 }
 
+.header .spical-btn {
+  padding: 10px 20px;
+  background-color: var(--second-color);
+  color: var(--primary-color);
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.header .spical-btn:hover {
+  background-color: #ffdf9e;
+  transform: scale(1.1);
+}
+
 .header .nav {
   width: 60%;
   display: flex;
@@ -414,6 +430,13 @@ textarea {
   transition: all 0.5s;
 }
 
+.advice.spical {
+  height: 150px;
+  top: -30px;
+  text-align: center;
+  padding: 5px;
+}
+
 @media (max-width: 768px) {
   .advice {
     width: 400px;
@@ -425,6 +448,12 @@ textarea {
 @media (max-width: 572px) {
   .advice {
     width: 300px;
+  }
+
+  .advice.spical {
+    height: 150px;
+    top: -25px;
+    text-align: center;
   }
 }
 

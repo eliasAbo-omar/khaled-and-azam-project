@@ -135,15 +135,20 @@ function renderBoxes(totalsObj, containerId) {
         specialClass = "";
         rankText = "المركز الثالث";
       }
+
+      const rankKey = `rank_${index + 1}`;
+
       container.innerHTML += `
         <div class="col-md-4">
           <div class="box ${specialClass}">
-            <div class="number-card">${rankText}</div>
+            <div class="number-card">
+            <span data-key="${rankKey}">${rankText}</span>
+            </div>
             <div class="logo">
               <img src="assets/image/logo.png" class="month-img" alt="logo" />
             </div>
             <div class="name"><span>${item.name}</span></div>
-            <div class="book-name"><span>${item.book || "قرآن"}</span></div>
+            <div class="book-name"><span>${item.book}</span></div>
             <div class="number-page">${item.pages}</div>
           </div>
         </div>`;
